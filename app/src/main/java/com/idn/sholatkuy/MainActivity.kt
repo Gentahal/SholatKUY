@@ -11,11 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val buttonNyoba: Button = findViewById(R.id.btn_nyoba)
-        buttonNyoba.setOnClickListener{
-            startActivity(Intent(this, QiblatActivity::class.java))
         }
-    }
-
 }
+

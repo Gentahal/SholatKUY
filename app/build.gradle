@@ -65,8 +65,8 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
-    //datePicker
-    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.4'
-
-    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+//    //datePicker
+//    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.4'
+//
+//    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 }
