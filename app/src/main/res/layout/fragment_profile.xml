@@ -108,6 +108,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_status"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="My Status"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:layout_editor_absoluteX="32dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:gravity="center"
+            android:layout_width="125dp"
+            android:layout_height="43dp"
+            android:textSize="15sp"
+            android:backgroundTint="#4D6378"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="😴 Sleep"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
