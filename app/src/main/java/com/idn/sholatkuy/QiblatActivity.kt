@@ -1,6 +1,7 @@
 package com.idn.sholatkuy
 
 import android.content.Context
+import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -10,55 +11,62 @@ import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 
-    private var currentDegree = 0f
-
-    private var mSendorManager: SensorManager? = null
+    private lateinit var sensorManager: SensorManager
+    private lateinit var square: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qiblat)
-        initData()
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        square = findViewById(R.id.imgCompass)
+
+        setUpSensorStuff()
     }
 
-    private fun initData() {
-        mSendorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager?
-    }
+    private fun setUpSensorStuff() {
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
-    override fun onResume() {
-        super.onResume()
-        @Suppress("DEPRECATION")
-        mSendorManager?.registerListener(this,
-            mSendorManager?.getDefaultSensor(Sensor.TYPE_ORIENTATION),
-            SensorManager.SENSOR_DELAY_GAME)
-    }
-
-    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
-
+        sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)?.also {
+            sensorManager.registerListener(
+                this,
+                it,
+                SensorManager.SENSOR_DELAY_FASTEST,
+                SensorManager.SENSOR_DELAY_FASTEST
+            )
+        }
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-        val degree = Math.round(event?.values?.get(0)!!)
+        if (event?.sensor?.type == Sensor.TYPE_ACCELEROMETER) {
+            val sides =event.values[0]
+            val upDown = event.values[1]
 
-        val rotateAnimation = RotateAnimation(
-            currentDegree,
-            (-degree).toFloat(),
-            Animation.RELATIVE_TO_SELF,
-                0.5f,
-            Animation.RELATIVE_TO_SELF,
-                0.5f
-        )
+            square.apply {
+                rotationX = upDown * 3f
+                rotationY = sides * 3f
+                rotation = -sides
+                translationX = sides * -10
+                translationY = upDown * -10
+            }
 
-        rotateAnimation.duration = 210
-        rotateAnimation.fillAfter = true
-
-        var imgArrow = findViewById<ImageView>(R.id.imgCompass)
-
-        imgArrow.startAnimation(rotateAnimation)
-        currentDegree = (-degree).toFloat()
+            val color = if (upDown.toInt()== 0 && sides.toInt() == 0) Color.GREEN else Color.RED
+            square.setBackgroundColor(color)
+        }
     }
 
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        return
+    }
+
+    override fun onDestroy() {
+        sensorManager.unregisterListener(this)
+        super.onDestroy()
+    }
 
 }
