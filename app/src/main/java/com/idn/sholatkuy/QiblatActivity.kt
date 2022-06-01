@@ -16,8 +16,8 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 
-    private lateinit var sensorManager: SensorManager
-    private lateinit var square: ImageView
+    private lateinit var sensorManager: SensorManager // ini codingan buat sensor kiblat ya jangan di apus
+    private lateinit var square: ImageView            // tinggal buat button yang bisa move ke qiblat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -13,6 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="FabStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabRectangle</item>
+    </style>
 
     <style name="CustomCardCorners" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners</item>
@@ -22,5 +26,18 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">75dp</item>
         <item name="cornerSizeTopRight">75dp</item>
+    </style>
+
+    <style name="FabRectangle" parent="FabStyle">
+        <item name="cornerSize">30%</item>
+    </style>
+    
+    <style name="ActionBarStyle" parent="android:Widget.ActionBar">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="NoActionBar" parent="Theme.SholatKUY">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
     </style>
 </resources>
