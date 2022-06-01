@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity(){
         // status bar is hidden, so hide that too if necessary.
         actionBar?.hide()
 
+        binding.btnProfile.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
+        }
+
 
 
 
