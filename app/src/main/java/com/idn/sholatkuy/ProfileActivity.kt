@@ -22,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
         _binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val drawerLayout : DrawerLayout = binding
+        val drawerLayout : DrawerLayout = binding.drawerLayout
         val navView : NavigationView = binding.navView
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
