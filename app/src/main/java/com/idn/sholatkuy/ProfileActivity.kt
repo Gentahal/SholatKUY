@@ -24,7 +24,6 @@ class ProfileActivity : AppCompatActivity() {
 
         val drawerLayout : DrawerLayout = binding
         val navView : NavigationView = binding.navView
-
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()

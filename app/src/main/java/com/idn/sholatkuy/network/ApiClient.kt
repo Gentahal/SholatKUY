@@ -11,10 +11,10 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
 
-    fun getApiService(): ApiService{
-        val httpLoggingInterceptor : HttpLoggingInterceptor = if (BuildConfig.DEBUG) {
+    fun getApiService(): ApiService {
+        val httpLoggingInterceptor: HttpLoggingInterceptor = if (BuildConfig.DEBUG){
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        }else{
+        } else {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
         }
 
@@ -33,7 +33,7 @@ object ApiClient {
             .connectTimeout(30, TimeUnit.SECONDS)
             .build()
 
-        return  Retrofit.Builder()
+        return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
