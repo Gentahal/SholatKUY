@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity(){
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnProfile.setOnClickListener {
-            startActivity(Intent(this@MainActivity, QiblatActivity::class.java))
-        }
-
         val drawerLayout : DrawerLayout = binding.drawerLayout
         val navView : NavigationView = binding.navView
 
@@ -42,8 +38,13 @@ class MainActivity : AppCompatActivity(){
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.navigation_home -> Toast.makeText(applicationContext, "Open", Toast.LENGTH_LONG).show()
-                R.id.navigation_profile -> Toast.makeText(applicationContext, "Open", Toast.LENGTH_LONG).show()
+                R.id.navigation_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+                R.id.navigation_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                }
                 R.id.navigation_compas -> {
                     startActivity(Intent(this, QiblatActivity::class.java))
                 }

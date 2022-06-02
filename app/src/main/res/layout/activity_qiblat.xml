@@ -8,14 +8,14 @@
     android:background="@color/black">
 
     <TextView
+        android:id="@+id/tv_square"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/tv_square"
+        android:layout_centerInParent="true"
         android:background="@color/lightGreen"
         android:gravity="center"
         android:text="INI NYOBA"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+        android:textSize="20sp" />
 
 </RelativeLayout>
