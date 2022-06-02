@@ -40,4 +40,11 @@
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
+    
+    <style name="roundImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+        <item name="color">@color/white</item>
+    </style>
 </resources>
