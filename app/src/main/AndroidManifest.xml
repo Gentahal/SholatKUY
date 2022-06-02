@@ -21,7 +21,7 @@
             android:name=".QiblatActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".response.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
