@@ -1,17 +1,13 @@
-package com.idn.sholatkuy.response
+package com.idn.sholatkuy
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.idn.sholatkuy.ProfileActivity
-import com.idn.sholatkuy.QiblatActivity
-import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){

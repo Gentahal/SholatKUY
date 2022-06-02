@@ -15,22 +15,6 @@ data class JadwalResponse(
 ) : Parcelable
 
 @Parcelize
-data class Koordinat(
-
-	@field:SerializedName("lintang")
-	val lintang: String? = null,
-
-	@field:SerializedName("lon")
-	val lon: Double? = null,
-
-	@field:SerializedName("lat")
-	val lat: Double? = null,
-
-	@field:SerializedName("bujur")
-	val bujur: String? = null
-) : Parcelable
-
-@Parcelize
 data class Jadwal(
 
 	@field:SerializedName("date")
@@ -79,6 +63,4 @@ data class Data(
 	@field:SerializedName("id")
 	val id: String? = null,
 
-	@field:SerializedName("koordinat")
-	val koordinat: Koordinat? = null
 ) : Parcelable
