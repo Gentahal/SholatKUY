@@ -8,7 +8,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.idn.sholatkuy.databinding.ActivityProfileBinding
-import com.idn.sholatkuy.response.MainActivity
 
 class ProfileActivity : AppCompatActivity() {
 

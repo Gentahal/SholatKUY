@@ -1,4 +1,4 @@
-package com.idn.sholatkuy
+package com.idn.sholatkuy.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -12,22 +12,6 @@ data class JadwalResponse(
 
 	@field:SerializedName("status")
 	val status: Boolean? = null
-) : Parcelable
-
-@Parcelize
-data class Koordinat(
-
-	@field:SerializedName("lintang")
-	val lintang: String? = null,
-
-	@field:SerializedName("lon")
-	val lon: Double? = null,
-
-	@field:SerializedName("lat")
-	val lat: Double? = null,
-
-	@field:SerializedName("bujur")
-	val bujur: String? = null
 ) : Parcelable
 
 @Parcelize
@@ -78,7 +62,4 @@ data class Data(
 
 	@field:SerializedName("id")
 	val id: String? = null,
-
-	@field:SerializedName("koordinat")
-	val koordinat: Koordinat? = null
 ) : Parcelable
