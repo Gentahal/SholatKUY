@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         binding.btnProfile.setOnClickListener {
-            startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
+            startActivity(Intent(this@MainActivity, QiblatActivity::class.java))
         }
 
         val drawerLayout : DrawerLayout = binding.drawerLayout
