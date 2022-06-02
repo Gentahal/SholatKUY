@@ -9,7 +9,7 @@
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="20dp"
     app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="@color/lightGreen"
+    app:cardBackgroundColor="@color/white"
     android:clickable="true"
     android:focusable="true">
 
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="Subuh"
-        android:textColor="@color/white"
+        android:textColor="@color/lightGreen"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="04:43 AM"
-        android:textColor="@color/white"
+        android:textColor="@color/lightGreen"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
