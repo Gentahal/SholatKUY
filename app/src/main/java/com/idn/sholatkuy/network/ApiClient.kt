@@ -1,7 +1,6 @@
 package com.idn.sholatkuy.network
 
 import com.idn.sholatkuy.BuildConfig
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

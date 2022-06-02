@@ -14,4 +14,5 @@ class MainViewModel : ViewModel() {
     private fun getJadwalSholat(responHandler: (List<JadwalResponse>)-> Unit, errorHandler: (Throwable)-> Unit) {
         ApiClient.getApiService().getJadwalSholat()
     }
+
 }
