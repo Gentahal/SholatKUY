@@ -1,10 +1,7 @@
 package com.idn.sholatkuy.network
 
 import com.idn.sholatkuy.BuildConfig
-<<<<<<< HEAD
-=======
 import okhttp3.OkHttp
->>>>>>> origin/master
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,17 +11,10 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
 
-<<<<<<< HEAD
-    fun getApiSetvice(): ApiService {
-        val httpLoggingInterceptor: HttpLoggingInterceptor = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        } else {
-=======
     fun getApiService(): ApiService{
         val httpLoggingInterceptor : HttpLoggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         }else{
->>>>>>> origin/master
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
         }
 
@@ -36,10 +26,6 @@ object ApiClient {
                     .newBuilder()
                     .addHeader("Content-Type", "application/json")
                     .build()
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
                 return@addInterceptor it.proceed(request)
             }
             .pingInterval(10, TimeUnit.SECONDS)
@@ -47,11 +33,7 @@ object ApiClient {
             .connectTimeout(30, TimeUnit.SECONDS)
             .build()
 
-<<<<<<< HEAD
-        return Retrofit.Builder()
-=======
         return  Retrofit.Builder()
->>>>>>> origin/master
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
