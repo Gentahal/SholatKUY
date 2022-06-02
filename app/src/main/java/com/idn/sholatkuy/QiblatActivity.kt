@@ -17,14 +17,14 @@ import androidx.appcompat.app.AppCompatDelegate
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var sensorManager: SensorManager // ini codingan buat sensor kiblat ya jangan di apus
-    private lateinit var square: TextView            // tinggal buat button yang bisa move ke qiblat
+    private lateinit var square: ImageView            // tinggal buat button yang bisa move ke qiblat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qiblat)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        square = findViewById(R.id.tv_square)
+        square = findViewById(R.id.bg_mecca)
 
         setUpSensorStuff()
     }
@@ -54,11 +54,6 @@ class QiblatActivity : AppCompatActivity(), SensorEventListener {
                 translationX = sides * -10
                 translationY = upDown * -10
             }
-
-            val color = if (upDown.toInt()== 0 && sides.toInt() == 0) Color.GREEN else Color.RED
-            square.setBackgroundColor(color)
-
-            square.text = "up/down ${upDown.toInt()}\nleft/right ${sides.toInt()}"
         }
     }
 
