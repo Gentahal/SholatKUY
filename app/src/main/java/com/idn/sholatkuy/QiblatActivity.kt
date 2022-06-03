@@ -20,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.idn.sholatkuy.databinding.ActivityProfileBinding
 import com.idn.sholatkuy.databinding.ActivityQiblatBinding
+import com.idn.sholatkuy.databinding.ActivitySearchBinding
 
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 
@@ -63,6 +64,11 @@ class QiblatActivity : AppCompatActivity(), SensorEventListener {
                 }
                 R.id.navigation_compas -> {
                     startActivity(Intent(this, QiblatActivity::class.java))
+                    finish()
+                }
+                R.id.navigation_search -> {
+                    startActivity(Intent(this, SearchActivity::class.java))
+                    finish()
                 }
             }
             true

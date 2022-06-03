@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.idn.sholatkuy.databinding.ActivityMainBinding
+import com.idn.sholatkuy.databinding.ActivitySearchBinding
 
 class MainActivity : AppCompatActivity(){
 
@@ -39,9 +40,15 @@ class MainActivity : AppCompatActivity(){
                 }
                 R.id.navigation_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
+                    finish()
                 }
                 R.id.navigation_compas -> {
                     startActivity(Intent(this, QiblatActivity::class.java))
+                    finish()
+                }
+                R.id.navigation_search -> {
+                    startActivity(Intent(this, SearchActivity::class.java))
+                    finish()
                 }
             }
             true

@@ -16,4 +16,8 @@
         android:id="@+id/navigation_compas"
         android:icon="@drawable/ic_baseline_explore_24"
         android:title="Compas"/>
+
+    <item android:id="@+id/navigation_search"
+        android:title="Search Islamic Info"
+        android:icon="@drawable/ic_baseline_search_24"/>
 </menu>
