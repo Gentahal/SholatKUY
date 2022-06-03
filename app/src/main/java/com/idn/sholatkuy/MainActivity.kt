@@ -15,53 +15,15 @@ class MainActivity : AppCompatActivity(){
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding as ActivityMainBinding
 
-    lateinit var toggle: ActionBarDrawerToggle
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val drawerLayout : DrawerLayout = binding.drawerLayout
-        val navView : NavigationView = binding.navView
+        supportActionBar?.hide()
 
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.navigation_home -> {
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
-                }
-                R.id.navigation_profile -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
-                    finish()
-                }
-                R.id.navigation_compas -> {
-                    startActivity(Intent(this, QiblatActivity::class.java))
-                    finish()
-                }
-                R.id.navigation_search -> {
-                    startActivity(Intent(this, SearchActivity::class.java))
-                    finish()
-                }
-            }
-            true
-        }
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)){
-            return true
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 }
 
