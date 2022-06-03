@@ -100,19 +100,17 @@
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
-
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_utama"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            tools:listitem="@layout/row_item_sholat"/>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_utama"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        tools:listitem="@layout/row_item_sholat"/>
 
 </androidx.core.widget.NestedScrollView>
