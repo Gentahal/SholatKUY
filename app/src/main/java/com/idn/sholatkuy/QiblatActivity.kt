@@ -25,7 +25,7 @@ import com.idn.sholatkuy.databinding.ActivitySearchBinding
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 
 
-    private lateinit var sensorManager: SensorManager // ini codingan buat sensor kiblat ya jangan di apus
+    private lateinit var sensorManager: SensorManager
     private lateinit var square: ImageView            // tinggal buat button yang bisa move ke qiblat
 
     lateinit var toggle: ActionBarDrawerToggle
