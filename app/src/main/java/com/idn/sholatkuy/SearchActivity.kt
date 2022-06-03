@@ -1,31 +1,36 @@
 package com.idn.sholatkuy
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.webkit.WebViewClient
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.idn.sholatkuy.databinding.ActivityProfileBinding
 import com.idn.sholatkuy.databinding.ActivitySearchBinding
 
-class ProfileActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
 
-    private var _binding : ActivityProfileBinding? = null
-    private val binding get() = _binding as ActivityProfileBinding
+    private var _binding : ActivitySearchBinding? = null
+    private val binding get() = _binding as ActivitySearchBinding
 
     lateinit var toggle: ActionBarDrawerToggle
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = ActivityProfileBinding.inflate(layoutInflater)
+        _binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        webViewSetup()
 
         val drawerLayout : DrawerLayout = binding.drawerLayout
         val navView : NavigationView = binding.navView
-
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -53,7 +58,17 @@ class ProfileActivity : AppCompatActivity() {
             }
             true
         }
+    }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun webViewSetup() {
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.apply {
+            loadUrl("https://rumaysho.com/?s=")
+            settings.javaScriptEnabled = true
+            settings.safeBrowsingEnabled = true
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
