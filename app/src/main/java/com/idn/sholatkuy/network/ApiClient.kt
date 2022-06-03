@@ -1,6 +1,7 @@
 package com.idn.sholatkuy.network
 
 import com.idn.sholatkuy.BuildConfig
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,13 +21,7 @@ object ApiClient {
         val okHttpClient = OkHttpClient.Builder()
             .retryOnConnectionFailure(true)
             .addInterceptor(httpLoggingInterceptor)
-            .addInterceptor {
-                val request = it.request()
-                    .newBuilder()
-                    .addHeader("Content-Type", "application/json")
-                    .build()
-                return@addInterceptor it.proceed(request)
-            }
+            .addInterceptor(defaultHttpClient())
             .pingInterval(10, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
@@ -39,5 +34,15 @@ object ApiClient {
             .client(okHttpClient)
             .build()
             .create(ApiService::class.java)
+    }
+
+    private fun defaultHttpClient(): Interceptor {
+        return Interceptor { chain ->
+            val request = chain.request()
+                .newBuilder()
+                .addHeader("Content-Type", "application/json")
+                .build()
+            return@Interceptor chain.proceed(request)
+        }
     }
 }
