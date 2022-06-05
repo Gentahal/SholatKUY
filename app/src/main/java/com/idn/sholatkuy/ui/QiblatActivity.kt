@@ -1,18 +1,14 @@
-package com.idn.sholatkuy
+package com.idn.sholatkuy.ui
 
-import android.content.Context
-import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.animation.Animation
-import android.view.animation.RotateAnimation
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.idn.sholatkuy.R
 
 class QiblatActivity : AppCompatActivity(), SensorEventListener {
 

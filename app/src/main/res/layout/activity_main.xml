@@ -6,22 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/app_bar"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/btn_menu"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="#00FFFFFF"
             android:layout_marginStart="25dp"
+            android:background="#00FFFFFF"
             android:src="@drawable/ic_baseline_menu_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +55,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/halo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,25 +65,70 @@
             android:id="@+id/tv_halo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Halo"
             android:textColor="@color/lightgrey"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="25dp"
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/tv_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genta Halilintar"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="32sp"
             android:layout_marginStart="25dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_halo"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Genta Halilintar"
+            android:textColor="@color/white"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/white"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_halo" />
 
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/halo">
+
+        <ImageView
+            android:id="@+id/img_banner"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:src="@drawable/image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/waktu_sholat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="110dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Maghrib"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextClock
+            android:id="@+id/tv_time_today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:format12Hour="HH:mm:ss  "
+            android:format24Hour="HH:mm:ss "
+            android:gravity="center"
+            android:text="13:05"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            app:layout_constraintTop_toBottomOf="@+id/waktu_sholat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package com.idn.sholatkuy
+package com.idn.sholatkuy.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

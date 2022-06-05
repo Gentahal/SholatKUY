@@ -1,4 +1,4 @@
-package com.idn.sholatkuy
+package com.idn.sholatkuy.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.idn.sholatkuy.R
+import com.idn.sholatkuy.SearchActivity
 import com.idn.sholatkuy.databinding.ActivityProfileBinding
-import com.idn.sholatkuy.databinding.ActivitySearchBinding
 
 class ProfileActivity : AppCompatActivity() {
 

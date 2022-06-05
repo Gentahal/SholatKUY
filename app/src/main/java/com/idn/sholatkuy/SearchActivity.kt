@@ -12,6 +12,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.idn.sholatkuy.databinding.ActivitySearchBinding
+import com.idn.sholatkuy.ui.MainActivity
+import com.idn.sholatkuy.ui.ProfileActivity
+import com.idn.sholatkuy.ui.QiblatActivity
 
 class SearchActivity : AppCompatActivity() {
 

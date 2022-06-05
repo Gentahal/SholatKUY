@@ -1,4 +1,4 @@
-package com.idn.sholatkuy
+package com.idn.sholatkuy.utils
 
 import com.idn.sholatkuy.response.JadwalResponse
 
