@@ -4,6 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.idn.sholatkuy.network.ApiClient
 import com.idn.sholatkuy.response.JadwalResponse
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainViewModel : ViewModel() {
 
@@ -13,6 +16,24 @@ class MainViewModel : ViewModel() {
 
     private fun getJadwalSholat(responHandler: (List<JadwalResponse>)-> Unit, errorHandler: (Throwable)-> Unit) {
         ApiClient.getApiService().getJadwalSholat()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responHandler(it)
+            }, {
+                errorHandler(it)
+            })
+    }
+
+    fun getData(){
+        isLoading.value= true
+        getJadwalSholat({
+            isLoading.value = false
+            jadwalResponse.value = it
+        },{
+            isLoading.value = true
+            isError.value = it
+        })
     }
 
 }

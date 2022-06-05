@@ -91,6 +91,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/banner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/halo">
 
@@ -130,7 +131,57 @@
             android:textSize="50sp"
             app:layout_constraintTop_toBottomOf="@+id/waktu_sholat" />
 
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_view"
+            app:queryHint="Cari kota kamu"
+            android:theme="@style/searchStylr"
+            app:iconifiedByDefault="false"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/searchview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time_today"
+            android:gravity="center"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/jadwal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner">
+
+        <TextView
+            android:id="@+id/jadwal_sholat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Jadwal Sholat"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/jadwal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/row_item_sholat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
