@@ -1,5 +1,6 @@
 package com.idn.sholatkuy.ui
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.idn.sholatkuy.network.ApiClient
@@ -18,8 +19,12 @@ class MainViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val isError = MutableLiveData<Throwable>()
 
-    private fun getJadwalSholat(responHandler: (Jadwal)-> Unit, errorHandler: (Throwable)-> Unit) {
-        val idKota = 1203
+    private fun getJadwalSholat(
+        idKota: String,
+        responHandler: (Jadwal) -> Unit,
+        errorHandler: (Throwable) -> Unit
+    ) {
+
         // get today date
         val date = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(Date())
         val tahun = date.split("/")[0].toInt()
@@ -37,15 +42,29 @@ class MainViewModel : ViewModel() {
             })
     }
 
-    fun getData(){
-        isLoading.value= true
-        getJadwalSholat({
-            isLoading.value = false
-            jadwalResponse.value = it
-        },{
-            isLoading.value = true
-            isError.value = it
-        })
+    fun getData(idKota: String) {
+        isLoading.value = true
+        getJadwalSholat(
+            idKota, {
+                isLoading.value = false
+                jadwalResponse.value = it
+            }, {
+                isLoading.value = true
+                isError.value = it
+            })
+    }
+
+    fun getSearchCity(city: String) {
+        ApiClient.getApiService().getKota(city)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe( {
+                it.data?.get(0)?.id?.let {
+                    getData(it)
+                }
+            }, {
+                isError.value = Throwable("Kota tidak ditemukan")
+            })
     }
 
 }
