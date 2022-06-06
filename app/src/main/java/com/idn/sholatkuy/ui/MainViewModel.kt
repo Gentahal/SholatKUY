@@ -9,6 +9,8 @@ import com.idn.sholatkuy.response.JadwalResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainViewModel : ViewModel() {
 
@@ -17,11 +19,19 @@ class MainViewModel : ViewModel() {
     val isError = MutableLiveData<Throwable>()
 
     private fun getJadwalSholat(responHandler: (Jadwal)-> Unit, errorHandler: (Throwable)-> Unit) {
-        ApiClient.getApiService().getJadwalSholat()
+        val idKota = 1203
+        // get today date
+        val date = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(Date())
+        val tahun = date.split("/")[0].toInt()
+        val bulan = date.split("/")[1].toInt()
+        val tanggal = date.split("/")[2].toInt()
+
+
+        ApiClient.getApiService().getJadwalSholat(idKota, tahun, bulan, tanggal)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                responHandler(it)
+                responHandler(it.data?.jadwal as Jadwal)
             }, {
                 errorHandler(it)
             })
