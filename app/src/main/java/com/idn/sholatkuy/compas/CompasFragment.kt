@@ -1,32 +1,42 @@
-package com.idn.sholatkuy.ui
+package com.idn.sholatkuy.compas
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
-import com.idn.sholatkuy.R
+import androidx.core.content.ContextCompat.getSystemService
+import com.idn.sholatkuy.databinding.FragmentCompasBinding
 
-class QiblatActivity : AppCompatActivity(), SensorEventListener {
+class CompasFragment : Fragment(), SensorEventListener {
 
     private lateinit var sensorManager: SensorManager // ini codingan buat sensor kiblat ya jangan di apus
-    private lateinit var square: ImageView            // tinggal buat button yang bisa move ke qiblat
+    private lateinit var square: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_qiblat)
+    private var _binding  : FragmentCompasBinding?  = null
+    private val binding get() = _binding as FragmentCompasBinding
 
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentCompasBinding.inflate(LayoutInflater.from(context), container, false)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        square = findViewById(R.id.bg_mecca)
+        square = binding.bgMecca
 
         setUpSensorStuff()
+        return binding.root
     }
 
     private fun setUpSensorStuff() {
-        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+        sensorManager = getSystemService(requireContext(), SensorManager::class.java) as SensorManager
 
         sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)?.also {
             sensorManager.registerListener(
@@ -53,7 +63,7 @@ class QiblatActivity : AppCompatActivity(), SensorEventListener {
         }
     }
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
         return
     }
 

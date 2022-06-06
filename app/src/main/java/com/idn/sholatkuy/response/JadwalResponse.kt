@@ -17,12 +17,6 @@ data class JadwalResponse(
 @Parcelize
 data class Jadwal(
 
-	@field:SerializedName("date")
-	val date: String? = null,
-
-	@field:SerializedName("imsak")
-	val imsak: String? = null,
-
 	@field:SerializedName("isya")
 	val isya: String? = null,
 
@@ -34,12 +28,6 @@ data class Jadwal(
 
 	@field:SerializedName("dhuha")
 	val dhuha: String? = null,
-
-	@field:SerializedName("terbit")
-	val terbit: String? = null,
-
-	@field:SerializedName("tanggal")
-	val tanggal: String? = null,
 
 	@field:SerializedName("ashar")
 	val ashar: String? = null,
