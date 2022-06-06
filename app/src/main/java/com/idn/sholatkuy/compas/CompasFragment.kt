@@ -1,6 +1,5 @@
-package com.idn.sholatkuy.ui
+package com.idn.sholatkuy.compas
 
-import android.content.Context.SENSOR_SERVICE
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -11,10 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat.getSystemService
-import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.FragmentCompasBinding
 
 class CompasFragment : Fragment(), SensorEventListener {

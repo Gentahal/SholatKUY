@@ -4,17 +4,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.sholatkuy.databinding.RowItemSholatBinding
+import com.idn.sholatkuy.response.Jadwal
 import com.idn.sholatkuy.response.JadwalResponse
 
-class JadwalAdapter : RecyclerView.Adapter<JadwalAdapter.MyViewHolder>() {
+class JadwalAdapter(private val jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewHolder>() {
+    private val listSholat = listOf("subuh","dhuha","dzuhur","ashar","maghrib","isya")
+    private val listWaktu = listOf(jadwal.subuh,jadwal.dhuha,jadwal.dzuhur,jadwal.ashar,jadwal.maghrib,jadwal.isya)
 
-    private var listSholat = ArrayList<JadwalResponse>()
-
-    fun setData(data:List<JadwalResponse>){
-        if (data == null) return
-        listSholat.clear()
-        listSholat.addAll(data)
-    }
+//
+//    fun setData(data:List<JadwalResponse>){
+//        if (data == null) return
+//        listSholat.clear()
+//        listSholat.addAll(data)
+//    }
 
     class MyViewHolder(val binding: RowItemSholatBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -25,15 +27,15 @@ class JadwalAdapter : RecyclerView.Adapter<JadwalAdapter.MyViewHolder>() {
     )
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = listSholat[position]
+        val waktuSholat = listSholat[position]
+        val jamSholat = listWaktu[position]
         holder.binding.apply {
-            rvTime.text
+            rvWaktu.text  = waktuSholat
+            rvTime.text = jamSholat
         }
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = listSholat.size
 
 
 }
