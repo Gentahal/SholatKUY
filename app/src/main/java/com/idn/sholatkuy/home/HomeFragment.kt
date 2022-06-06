@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import com.idn.sholatkuy.databinding.FragmentHomeBinding
 import com.idn.sholatkuy.ui.JadwalAdapter
@@ -16,7 +17,7 @@ class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding as FragmentHomeBinding
 
-    val viewModel : MainViewModel by activityViewModels()
+    private val viewModel : MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,12 +25,28 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        viewModel.getData()
+        viewModel.getData("1203")
 
         viewModel.jadwalResponse.observe(viewLifecycleOwner){
             Log.i("Jadwal", "$it")
             binding.rvJadwal.adapter = JadwalAdapter(it)
         }
+
+        viewModel.isError
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    viewModel.getSearchCity(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
 
         return binding.root
     }
