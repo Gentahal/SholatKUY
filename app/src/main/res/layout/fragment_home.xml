@@ -72,7 +72,7 @@
                 android:layout_marginStart="25dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Halo"
-                android:textColor="@color/lightgrey"
+                android:textColor="#6A9EED"
                 android:textSize="32sp"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
