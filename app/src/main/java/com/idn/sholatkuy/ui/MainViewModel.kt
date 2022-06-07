@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.idn.sholatkuy.network.ApiClient
 import com.idn.sholatkuy.response.Data
+import com.idn.sholatkuy.response.DataTafsir
 import com.idn.sholatkuy.response.Jadwal
 import com.idn.sholatkuy.response.JadwalResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -58,12 +59,25 @@ class MainViewModel : ViewModel() {
         ApiClient.getApiService().getKota(city)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe( {
+            .subscribe({
                 it.data?.get(0)?.id?.let {
                     getData(it)
                 }
             }, {
                 isError.value = Throwable("Kota tidak ditemukan")
+            })
+    }
+
+    fun getDataTafsir(idTafsir: Int) {
+        ApiClient.getApiService().getBacaTafsir(idTafsir)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                it.data?.get(0)?.id?.let {
+                    getDataTafsir(idTafsir)
+                }
+            }, {
+                isError.value = Throwable("Tafsir tidak ditemukan")
             })
     }
 

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.sholatkuy.databinding.RowItemSholatBinding
 import com.idn.sholatkuy.response.Jadwal
-import com.idn.sholatkuy.response.JadwalResponse
 
 class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewHolder>() {
     private val listSholat = listOf("subuh","dhuha","dzuhur","ashar","maghrib","isya")
