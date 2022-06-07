@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.idn.sholatkuy">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,22 +16,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SholatKUY">
         <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.QiblatActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.MainActivity"
-            android:exported="true">
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore = "LockedOrientationActivity">
+<!--            android:theme="@style/SplashTheme"-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <!-- todo : inten filter adalah untuk memunculkan screen/layar pertama kali aplikasi di mulai -->
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
         </activity>
     </application>
 
