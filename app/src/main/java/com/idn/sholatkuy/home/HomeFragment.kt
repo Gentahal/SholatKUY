@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        viewModel.getData("1203")
+        viewModel.getData("1301")
 
         viewModel.jadwalResponse.observe(viewLifecycleOwner){
             Log.i("Jadwal", "$it")

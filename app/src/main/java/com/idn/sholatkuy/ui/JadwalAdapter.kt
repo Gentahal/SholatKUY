@@ -4,7 +4,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.RowItemSholatBinding
+import com.idn.sholatkuy.response.Data
 import com.idn.sholatkuy.response.Jadwal
 
 class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewHolder>() {
@@ -13,12 +15,6 @@ class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewH
     init {
         Log.i("JadwalAdapter", "$jadwal")
     }
-//
-//    fun setData(data:List<JadwalResponse>){
-//        if (data == null) return
-//        listSholat.clear()
-//        listSholat.addAll(data)
-//    }
 
     class MyViewHolder(val binding: RowItemSholatBinding) :
         RecyclerView.ViewHolder(binding.root)

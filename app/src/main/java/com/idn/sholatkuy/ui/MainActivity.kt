@@ -26,7 +26,14 @@ class MainActivity : AppCompatActivity(){
 
         _binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
+
         setupBottomNavigationBar()
+
+        RequestPermission()
+    }
+
+    private fun RequestPermission() {
+
     }
 
     private fun setupBottomNavigationBar() {
