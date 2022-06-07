@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="75dp">
+        android:padding="35dp">
 
         <TextView
             android:id="@+id/tv_tafsir"
@@ -24,7 +24,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="Judul Doa"
             android:textColor="@color/lightGreen"
-            android:textSize="32sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

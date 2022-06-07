@@ -14,6 +14,8 @@ class DoaAdapter(): RecyclerView.Adapter<DoaAdapter.MyViewHolder>()  {
 
     fun setData(data: List<DoaResponseItem>?) {
         if (data == null) return
+        listDoa.clear()
+        listDoa.addAll(data)
     }
 
     class MyViewHolder(val binding: RowItemDoaBinding) : RecyclerView.ViewHolder(binding.root)
@@ -22,11 +24,11 @@ class DoaAdapter(): RecyclerView.Adapter<DoaAdapter.MyViewHolder>()  {
         RowItemDoaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
     )
 
-    override fun onBindViewHolder(holder: DoaAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val doa = listDoa[position]
-        Log.i("Doa","$doa")
+        Log.i("ItemDoa","$doa")
         holder.binding.apply {
-            tvTafsir.text = doa.toString()
+            tvTafsir.text = doa.doa
         }
     }
 

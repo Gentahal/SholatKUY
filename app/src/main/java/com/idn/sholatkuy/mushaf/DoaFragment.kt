@@ -29,7 +29,7 @@ class DoaFragment : Fragment() {
         viewModel.getDoa()
 
         viewModel.listDoa.observe(viewLifecycleOwner){
-            Log.i("Doa", "$it")
+            Log.i("Data Doa", "$it")
             val adapter = DoaAdapter()
             adapter.setData(it)
             binding.rvDoa.adapter = adapter
