@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.idn.sholatkuy.network.ApiClient
 import com.idn.sholatkuy.response.Data
-import com.idn.sholatkuy.response.DataTafsir
 import com.idn.sholatkuy.response.Jadwal
 import com.idn.sholatkuy.response.JadwalResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -68,15 +67,5 @@ class MainViewModel : ViewModel() {
             })
     }
 
-    fun getDataTafsir(idTafsir: Int) {
-        ApiClient.getApiService().getBacaTafsir(idTafsir)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-
-            }, {
-                isError.value = Throwable("Tafsir tidak ditemukan")
-            })
-    }
 
 }
