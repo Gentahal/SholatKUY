@@ -73,9 +73,7 @@ class MainViewModel : ViewModel() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                it.data?.get(0)?.id?.let {
-                    getDataTafsir(idTafsir)
-                }
+
             }, {
                 isError.value = Throwable("Tafsir tidak ditemukan")
             })
