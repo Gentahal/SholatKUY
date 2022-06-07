@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary"
-    tools:context=".mushaf.MushafFragment">
+    tools:context=".mushaf.DoaFragment">
 
     <ImageView
         android:id="@+id/img_baca_doa"
@@ -30,9 +30,12 @@
         app:layout_constraintTop_toBottomOf="@+id/img_baca_doa"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_doa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/row_item_doa"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/tv_baca_doa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SholatKUY">
         <activity
-            android:name=".mushaf.DetailTafsir"
+            android:name=".mushaf.DetailDoa"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

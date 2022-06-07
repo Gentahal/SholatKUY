@@ -7,7 +7,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="20dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="15dp"
     app:cardBackgroundColor="@color/white"
     android:clickable="true"
     android:focusable="true">
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Judul Tafsir"
+            android:text="Judul Doa"
             android:textColor="@color/lightGreen"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"

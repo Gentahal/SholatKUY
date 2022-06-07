@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/navigation_mushaf"
-        android:name="com.idn.sholatkuy.mushaf.MushafFragment"
+        android:name="com.idn.sholatkuy.mushaf.DoaFragment"
         android:label="fragment_mushaf"
-        tools:layout="@layout/fragment_mushaf" />
+        tools:layout="@layout/fragment_doa" />
 </navigation>

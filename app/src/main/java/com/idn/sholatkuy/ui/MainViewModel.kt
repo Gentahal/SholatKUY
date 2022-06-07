@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.idn.sholatkuy.network.ApiClient
+import com.idn.sholatkuy.network2.ApiClient2
 import com.idn.sholatkuy.response.Data
+import com.idn.sholatkuy.response.DoaResponseItem
 import com.idn.sholatkuy.response.Jadwal
 import com.idn.sholatkuy.response.JadwalResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -15,6 +17,7 @@ import java.util.*
 
 class MainViewModel : ViewModel() {
 
+    val listDoa = MutableLiveData<List<DoaResponseItem>>()
     val jadwalResponse = MutableLiveData<Jadwal>()
     val isLoading = MutableLiveData<Boolean>()
     val isError = MutableLiveData<Throwable>()
@@ -64,6 +67,17 @@ class MainViewModel : ViewModel() {
                 }
             }, {
                 isError.value = Throwable("Kota tidak ditemukan")
+            })
+    }
+
+    fun getDoa() {
+        ApiClient2.getApiService2().getDoa()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                listDoa.value = it
+            }, {
+                isError.value = it
             })
     }
 

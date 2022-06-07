@@ -5,13 +5,6 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DoaResponse(
-
-	@field:SerializedName("DoaResponse")
-	val doaResponse: List<DoaResponseItem?>? = null
-) : Parcelable
-
-@Parcelize
 data class DoaResponseItem(
 
 	@field:SerializedName("ayat")

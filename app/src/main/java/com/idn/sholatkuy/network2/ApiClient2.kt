@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ApiClient2 {
-    fun getApiService2(): ApiService {
+    fun getApiService2(): ApiService2 {
         val httpLoggingInterceptor: HttpLoggingInterceptor = if (BuildConfig.DEBUG){
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         } else {
@@ -33,7 +33,7 @@ object ApiClient2 {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(ApiService::class.java)
+            .create(ApiService2::class.java)
     }
 
     private fun defaultHttpClient(): Interceptor {
