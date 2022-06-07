@@ -3,21 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.1537037037037037" />
+        <entry key="app/src/main/res/drawable/color_cursor.xml" value="0.158" />
+        <entry key="app/src/main/res/drawable/editicon.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.219" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_ring.xml" value="0.106" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.158" />
+        <entry key="app/src/main/res/drawable/searchview.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/switch_thumb.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/switch_track.xml" value="0.1515" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2978912353515625" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.17536704730831973" />
-        <entry key="app/src/main/res/layout/activity_qiblat.xml" value="0.3734375" />
-        <entry key="app/src/main/res/layout/fragment_compas.xml" value="0.2453125" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30625" />
-        <entry key="app/src/main/res/layout/fragment_mushaf.xml" value="0.2453125" />
-        <entry key="app/src/main/res/layout/fragment_search_view.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_detail_tafsir.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2921589688506982" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/activity_qiblat.xml" value="0.22580645161290322" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/fragment_compas.xml" value="0.2413793103448276" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2520775623268698" />
+        <entry key="app/src/main/res/layout/fragment_mushaf.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_search_view.xml" value="0.3734375" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.3734375" />
+        <entry key="app/src/main/res/layout/row_item_quran.xml" value="0.5145426432291667" />
         <entry key="app/src/main/res/layout/row_item_sholat.xml" value="0.335" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_item_tafsir.xml" value="0.3734375" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.3734375" />
       </map>
     </option>
   </component>
