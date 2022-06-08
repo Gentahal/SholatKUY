@@ -1,11 +1,18 @@
 package com.idn.sholatkuy.ui
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.graphics.green
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -21,6 +28,9 @@ class MainActivity : AppCompatActivity(){
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding as ActivityMainBinding
 
+    val NOTIF_ID = "sholat_kuy"
+    val NOTIF_NAME = "sholat"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,11 +39,19 @@ class MainActivity : AppCompatActivity(){
 
         setupBottomNavigationBar()
 
-        RequestPermission()
+        createNotification()
+
     }
 
-    private fun RequestPermission() {
-
+    fun createNotification() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationChannel = NotificationChannel(NOTIF_ID, NOTIF_NAME, NotificationManager.IMPORTANCE_DEFAULT).apply {
+                lightColor = Color.GREEN
+                enableLights(true)
+            }
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+        }
     }
 
     private fun setupBottomNavigationBar() {

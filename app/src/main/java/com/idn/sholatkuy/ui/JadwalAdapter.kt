@@ -3,6 +3,8 @@ package com.idn.sholatkuy.ui
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.RowItemSholatBinding
@@ -15,6 +17,10 @@ class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewH
     init {
         Log.i("JadwalAdapter", "$jadwal")
     }
+
+    val NOTIF_ID = "notif_id"
+    val NOTIF_NAME = "notif_name"
+    val NOTIFICATION_ID = 0
 
     class MyViewHolder(val binding: RowItemSholatBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -29,7 +35,23 @@ class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewH
         val jamSholat = listWaktu[position]
         Log.i("Sholat", "$waktuSholat $jamSholat")
         holder.binding.apply {
-            rvWaktu.text  = waktuSholat
+            btnJadwalSholat.apply {
+                text  = waktuSholat
+                setOnClickListener {
+                    val notification = NotificationCompat.Builder(context, NOTIF_ID)
+                        .setContentTitle("Sholat Kuy")
+                        .setContentText("Sudah Masuk waktu $waktuSholat nih Sholat KUY!!")
+                        .setSmallIcon(R.drawable.ic_baseline_menu_book_24)
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .build()
+
+                    val notificationManager = NotificationManagerCompat.from(context)
+
+                    setOnClickListener {
+                        notificationManager.notify(NOTIFICATION_ID, notification)
+                    }
+                }
+            }
             rvTime.text = jamSholat
         }
     }
