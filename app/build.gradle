@@ -59,7 +59,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
 
     //FusedLocation
-    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
 
     // Circle Image View
     implementation 'de.hdodenhof:circleimageview:3.1.0'

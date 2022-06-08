@@ -16,9 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SholatKUY">
         <activity
-            android:name=".mushaf.DetailDoa"
-            android:exported="false" />
-        <activity
             android:name=".ui.SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -33,9 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".mushaf.DetailDoa"
+            android:exported="false" />
+
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
     </application>
 
 </manifest>

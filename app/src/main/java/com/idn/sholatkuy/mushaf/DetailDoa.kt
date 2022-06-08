@@ -2,13 +2,10 @@ package com.idn.sholatkuy.mushaf
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.ActivityDetailDoaBinding
 import com.idn.sholatkuy.response.DoaResponseItem
-import com.idn.sholatkuy.ui.MainViewModel
 
 class DetailDoa : AppCompatActivity() {
 
