@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abdi Rabbani/AndroidStudioProjects/SholatKUY/app/src/main/res/layout/activity_detail_doa.xml" value="0.1" />
+        <entry key="..\:/Users/Abdi Rabbani/AndroidStudioProjects/SholatKUY/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Abdi Rabbani/AndroidStudioProjects/SholatKUY/app/src/main/res/layout/fragment_doa.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/Abdi Rabbani/AndroidStudioProjects/SholatKUY/app/src/main/res/layout/fragment_home.xml" value="0.10400000000000001" />
         <entry key="app/src/main/res/drawable/color_cursor.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/editicon.xml" value="0.158" />
-        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.158" />
-        <entry key="app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.158" />
-        <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.219" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.158" />
-        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_ring.xml" value="0.106" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/searchview.xml" value="0.158" />
