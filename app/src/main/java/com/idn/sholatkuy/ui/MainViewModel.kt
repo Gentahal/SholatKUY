@@ -18,6 +18,7 @@ import java.util.*
 class MainViewModel : ViewModel() {
 
     val listDoa = MutableLiveData<List<DoaResponseItem>>()
+
     val jadwalResponse = MutableLiveData<Jadwal>()
     val isLoading = MutableLiveData<Boolean>()
     val isError = MutableLiveData<Throwable>()

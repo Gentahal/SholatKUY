@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.idn.sholatkuy.R
 import com.idn.sholatkuy.databinding.FragmentDoaBinding
-import com.idn.sholatkuy.ui.DoaAdapter
+import com.idn.sholatkuy.mushaf.DoaAdapter
 import com.idn.sholatkuy.ui.JadwalAdapter
 import com.idn.sholatkuy.ui.MainViewModel
 

@@ -1,9 +1,8 @@
-package com.idn.sholatkuy.ui
+package com.idn.sholatkuy.mushaf
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Adapter
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.sholatkuy.databinding.RowItemDoaBinding
 import com.idn.sholatkuy.response.DoaResponseItem
