@@ -21,12 +21,6 @@ class DoaAdapter(): RecyclerView.Adapter<DoaAdapter.MyViewHolder>()  {
         listDoa.addAll(data)
     }
 
-    private var onItemClickCallback: OnItemClickCallback? = null
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
-
     class MyViewHolder(val binding: RowItemDoaBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= MyViewHolder(

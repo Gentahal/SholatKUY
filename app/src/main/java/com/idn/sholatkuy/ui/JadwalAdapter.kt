@@ -19,7 +19,6 @@ class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewH
     }
 
     val NOTIF_ID = "notif_id"
-    val NOTIF_NAME = "notif_name"
     val NOTIFICATION_ID = 0
 
     class MyViewHolder(val binding: RowItemSholatBinding) :
@@ -40,7 +39,8 @@ class JadwalAdapter(jadwal: Jadwal) : RecyclerView.Adapter<JadwalAdapter.MyViewH
                 setOnClickListener {
                     val notification = NotificationCompat.Builder(context, NOTIF_ID)
                         .setContentTitle("Sholat Kuy")
-                        .setContentText("Sudah Masuk waktu $waktuSholat nih Sholat KUY!!")
+                        .setContentText("Sudah masuk waktu $waktuSholat nih SHOLATKUY!!")
+                        .setColor(resources.getColor(R.color.primary))
                         .setSmallIcon(R.drawable.ic_baseline_menu_book_24)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .build()
