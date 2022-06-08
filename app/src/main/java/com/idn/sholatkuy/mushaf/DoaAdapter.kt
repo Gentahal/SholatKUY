@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.idn.sholatkuy.databinding.RowItemDoaBinding
 import com.idn.sholatkuy.response.DoaResponseItem
+import com.idn.sholatkuy.utils.OnItemClickCallback
 
 class DoaAdapter(): RecyclerView.Adapter<DoaAdapter.MyViewHolder>()  {
 
@@ -18,6 +19,12 @@ class DoaAdapter(): RecyclerView.Adapter<DoaAdapter.MyViewHolder>()  {
         if (data == null) return
         listDoa.clear()
         listDoa.addAll(data)
+    }
+
+    private var onItemClickCallback: OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 
     class MyViewHolder(val binding: RowItemDoaBinding) : RecyclerView.ViewHolder(binding.root)

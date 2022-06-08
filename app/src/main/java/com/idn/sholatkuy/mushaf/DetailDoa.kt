@@ -19,7 +19,7 @@ class DetailDoa : AppCompatActivity() {
         _binding = ActivityDetailDoaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.hide()
 
        val doa = intent.getParcelableExtra<DoaResponseItem>(EXTRA_DOA)
         doa?.let {
